@@ -27,11 +27,6 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
-      - name: naz log the config
-        run: echo "config=$(yq e ./config.yml -j -I=0)" >> $GITHUB_ENV
-        working-directory: ./reference-implementations/AppGW-IAPIM-Func/bicep
-
-
       - name: Validate that bicep builds
         run: az bicep build -f main.bicep
         working-directory: ./reference-implementations/AppGW-IAPIM-Func/bicep
