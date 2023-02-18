@@ -357,6 +357,7 @@ resource privateDnsZoneLink 'Microsoft.Network/privateDnsZones/virtualNetworkLin
       id: vnet.id
     }
   }
+  parent: privateDnsZones
   dependsOn: [
     privateDnsZones
     privateEndpoint
