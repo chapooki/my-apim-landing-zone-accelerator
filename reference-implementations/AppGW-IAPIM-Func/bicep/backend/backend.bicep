@@ -365,7 +365,7 @@ resource privateDnsZoneLink 'Microsoft.Network/privateDnsZones/virtualNetworkLin
 }
 
 resource privateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneGroups@2020-03-01' = {
-  name: '${privateEndpoint_funcappAPIMCSBackendMicroServiceA_name}/default'
+  name: 'default'
   parent: privateEndpoint
   properties: {
     privateDnsZoneConfigs: [
