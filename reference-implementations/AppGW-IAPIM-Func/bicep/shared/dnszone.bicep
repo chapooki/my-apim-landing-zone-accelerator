@@ -79,9 +79,9 @@ resource scmDnsZone 'Microsoft.Network/privateDnsZones@2020-06-01' = {
 
 resource gatewayRecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' = {
   name: 'azure-api.net/${apimName}'
+  parent: gatewayDnsZone
   dependsOn: [
     apim
-    gatewayDnsZone
   ]
   properties: {
     aRecords: [
@@ -94,10 +94,10 @@ resource gatewayRecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' = {
 }
 
 resource portalRecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' = {
-  name: 'portal.azure-api.net/${apimName}'
+  name: apimName
+  parent: portalDnsZone
   dependsOn: [
-    apim
-    portalDnsZone
+    apim    
   ]
   properties: {
     aRecords: [
@@ -110,10 +110,10 @@ resource portalRecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' = {
 }
 
 resource developerRecord 'Microsoft.Network/privateDnsZones/A@2020-06-01' = {
-  name: 'developer.azure-api.net/${apimName}'
+  name: apimName
+  parent: developerDnsZone
   dependsOn: [
-    apim
-    developerDnsZone
+    apim    
   ]
   properties: {
     aRecords: [
