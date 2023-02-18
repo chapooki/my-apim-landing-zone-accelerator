@@ -349,7 +349,7 @@ resource privateDnsZones 'Microsoft.Network/privateDnsZones@2018-09-01' = {
 }
 
 resource privateDnsZoneLink 'Microsoft.Network/privateDnsZones/virtualNetworkLinks@2018-09-01' = {
-  name: '${uniqueString(vnet.id)}'
+  name: uniqueString(vnet.id)
   location: 'global'
   properties: {
     registrationEnabled: false
