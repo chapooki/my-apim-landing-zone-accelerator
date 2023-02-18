@@ -1,3 +1,4 @@
+linter: 'none'
 AZURE_LOCATION: 'australiaeast'
 RESOURCE_NAME_PREFIX: 'apimdemo'
 ENVIRONMENT_TAG: 'dev'
